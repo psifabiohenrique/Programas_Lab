@@ -3,6 +3,8 @@ import math
 
 
 def calcular_valorU(string):
+    if ',' in string:
+        string = string.replace(',', '.')
     dados_brutos = string.split()
     dados = []
     for i in dados_brutos:
@@ -22,6 +24,8 @@ def calcular_valorU(string):
     for i in lista:
         acumulador += i
     valor_u = acumulador * -1
+
+    valor_u = str(valor_u).replace('.', ',')
 
     try:
         pyperclip.copy(valor_u)
