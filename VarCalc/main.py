@@ -8,12 +8,15 @@ user_data = ''
 sg.theme('DarkAmber')
 
 layout = [
+    [sg.Push(), sg.Text('Valor U'), sg.Push()],
     [sg.Text('Cole a frequência relativa aqui'), sg.InputText(key='Input_ValorU')],
     [sg.Button('Calcular', key='Calc_valorU')],
     [sg.HorizontalSeparator()],
+    [sg.Push(), sg.Text('Tempo de Recorrência'), sg.Push()],
     [sg.Text('Cole todas as sequências aqui'), sg.InputText(key='Input_Recorrencia')],
     [sg.Button('Calcular', key='Calc_recorrencia')],
     [sg.HorizontalSeparator()],
+    [sg.Push(), sg.Text('Nº Sequências Diferentes'), sg.Push()],
     [sg.Text('Cole todas as sequências aqui'), sg.InputText(key='Input_Nseq')],
     [sg.Button('Calcular', key='Calc_Nseq')]
 ]
