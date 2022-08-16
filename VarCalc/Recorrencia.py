@@ -14,12 +14,13 @@ def calcular_recorrencia(string):
             if not primeira:
                 if uni == seq:
                     valores.append(contador)
-                    contador = -1
-                contador += 1
+                    contador = 0
+                else:
+                    contador += 1
             if primeira:
                 if uni == seq:
                     primeira = False
-                    contador = -1
+                    contador = 0
         primeira = True
     resultado = str(sum(valores) / len(valores))
 
