@@ -1,11 +1,14 @@
 import pyperclip
 import math
+from Recorrencia import remover_data
 
 
-def calcular_valorU(string):
+def calcular_valorU(string, virgula):
     if ',' in string:
         string = string.replace(',', '.')
     dados_brutos = string.split()
+    if '/' in string:
+        dados_brutos = remover_data(dados_brutos)
     dados = []
     for i in dados_brutos:
         dados.append(float(i))
@@ -24,8 +27,8 @@ def calcular_valorU(string):
     for i in lista:
         acumulador += i
     valor_u = acumulador * -1
-
-    valor_u = str(valor_u).replace('.', ',')
+    if virgula:
+        valor_u = str(valor_u).replace('.', ',')
 
     try:
         pyperclip.copy(valor_u)
