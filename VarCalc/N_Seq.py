@@ -2,7 +2,7 @@ import pyperclip
 from Recorrencia import remover_ponto_virgula, remover_data, remover_zeros
 
 
-def calcular_NSeq(string, virgula):
+def calcular_NSeq(string):
     dados_brutos = string.split()
     if '.' in string or ',' in string:
         dados_brutos = remover_ponto_virgula(dados_brutos)
