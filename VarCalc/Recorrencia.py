@@ -1,5 +1,4 @@
-from email.policy import strict
-from unittest import result
+from statistics import mean, median
 import pyperclip
 
 
@@ -54,12 +53,14 @@ def calcular_recorrencia(string, virgula):
                     primeira = False
                     contador = 0
         primeira = True
-    resultado = str(sum(valores) / len(valores))
+    media = str(mean(valores))
+    mediana = str(median(valores))
 
     if virgula:
-        resultado = resultado.replace('.', ',')
+        media = media.replace('.', ',')
+    
     try:
-        pyperclip.copy(resultado)
+        pyperclip.copy(f"{media}\t{mediana}")
         return 'Copiado'
     except:
         return 'Falha'

@@ -14,6 +14,6 @@ setup(
     name="Calculos Variabilidade",
     version="0.1",
     description="empty",
-    options={"build_exe": build_exe_options},
-    executables=[Executable("main.py", base=base, icon="Icone.ico", target_name="VarCalc.exe")],
+    options={"build_exe": build_exe_options, "install_exe":{"force":True},},
+    executables=[Executable("main.py", base=base, icon="Icone.ico", target_name="VarCalc.exe", )],
 )
