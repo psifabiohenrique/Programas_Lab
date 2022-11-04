@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 from ValorU import calcular_valorU
 from Recorrencia import calcular_recorrencia
 from N_Seq import calcular_NSeq
+from n_mud import n_mudancas
 
 
 user_data = ''
@@ -18,7 +19,11 @@ layout = [
     [sg.HorizontalSeparator()],
     [sg.Push(), sg.Text('Nº Sequências Diferentes'), sg.Push()],
     [sg.Text('Cole todas as sequências aqui'), sg.InputText(key='Input_Nseq')],
-    [sg.Button('Calcular', key='Calc_Nseq')]
+    [sg.Button('Calcular', key='Calc_Nseq')],
+    [sg.HorizontalSeparator()],
+    [sg.Push(), sg.Text('Nº de Mudanças'), sg.Push()],
+    [sg.Text('Cole todas as sequências aqui'), sg.InputText(key='Input_Nmud')],
+    [sg.Button('Calcular', key='Calc_Nmud')]
 ]
 
 window = sg.Window('Calculos de Variabilidade', layout)
@@ -37,6 +42,9 @@ while True:
             sg.popup_ok(calcular_recorrencia(user_data, values['Virgula_recorrencia']))
         case 'Calc_Nseq':
             user_data = values['Input_Nseq']
-            sg.popup_ok(calcular_NSeq(user_data))
+            calcular_NSeq(user_data)
+        case 'Calc_Nmud':
+            user_data = values['Input_Nmud']
+            n_mudancas(user_data)
 
 window.close()

@@ -53,8 +53,8 @@ def calcular_recorrencia(string, virgula):
                     primeira = False
                     contador = 0
         primeira = True
-    media = str(mean(valores))
-    mediana = str(median(valores))
+    print(valores)
+    resultado = f"{mean(valores)} \t{median(valores)}"
 
     if virgula:
         media = media.replace('.', ',')
