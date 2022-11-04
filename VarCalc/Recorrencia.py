@@ -57,10 +57,10 @@ def calcular_recorrencia(string, virgula):
     resultado = f"{mean(valores)} \t{median(valores)}"
 
     if virgula:
-        media = media.replace('.', ',')
+        resultado = resultado.replace('.', ',')
     
     try:
-        pyperclip.copy(f"{media}\t{mediana}")
+        pyperclip.copy(resultado)
         return 'Copiado'
     except:
         return 'Falha'
